@@ -88,7 +88,7 @@ const SalespersonLeads = () => {
   };
 
   return (
-    <div className="bg-white border border-gray-300 rounded-md shadow-md p-4">
+    <div className="bg-white border border-gray-300 square-md shadow-md p-4">
       {/* Header */}
       <div className="flex items-center justify-between mb-2 border-b pb-2">
         <h2 className="text-lg font-semibold text-gray-800">
@@ -107,7 +107,7 @@ const SalespersonLeads = () => {
 
       {/* Chart */}
       <div className="w-full h-96 flex flex-col items-center">
-        <ResponsiveContainer width="70%" height="100%">
+        <ResponsiveContainer width="55%" height="100%">
           <BarChart data={data} barCategoryGap="20%">
             {/* Grid lines */}
             <CartesianGrid stroke="#e5e7eb" strokeWidth={1} vertical={false} />

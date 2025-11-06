@@ -86,7 +86,7 @@ const LeadsByProduct = () => {
 
   return (
     <div className="flex items-center justify-center p-4 bg-#8c8c8c">
-      <div className="bg-white border border-gray-300 rounded-md shadow-md w-full max-w-6xl mx-auto">
+      <div className="bg-white border border-gray-300 square-md shadow-md w-[100%] max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200 bg-[#f9f9f9]">
           <h2 className="text-gray-700 text-sm font-semibold">
