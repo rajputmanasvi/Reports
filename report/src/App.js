@@ -1,11 +1,12 @@
 import React from "react";
-import LeadsByProductList from "./components/ProductsList";
-function App() {
+import LeadsByProduct from "./components/LeadsByProduct";
+
+export default function App() {
   return (
-    <div className="App">
-      <LeadsByProductList/>
+    <div className="min-h-screen bg-gray-100 p-6 justify-center">
+      <div className="max-w-5xl mx-auto">
+        <LeadsByProduct />
+      </div>
     </div>
   );
 }
-
-export default App;
