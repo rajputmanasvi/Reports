@@ -86,7 +86,7 @@ const LeadsByProduct = () => {
 
   return (
     <div className="flex items-center justify-center p-4 bg-#8c8c8c">
-      <div className="bg-white border border-gray-300 square-md shadow-md w-[100%] max-w-6xl mx-auto">
+      <div className="bg-#8c8c8c border border-gray-300 square-md shadow-md w-[100%] max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200 bg-[#f9f9f9]">
           <h2 className="text-gray-700 text-sm font-semibold">
@@ -94,7 +94,7 @@ const LeadsByProduct = () => {
           </h2>
           <button
             onClick={handlePrint}
-            className="bg-purple-800 text-white text-sm px-4 py-1.5 rounded hover:bg-purple-900"
+            className="bg-purple-800 text-white text-sm px-4 py-1.5 rounded hover:bg-#583A63-900"
           >
             Print
           </button>

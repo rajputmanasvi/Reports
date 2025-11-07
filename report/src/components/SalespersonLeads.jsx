@@ -24,11 +24,13 @@ const SalespersonLeads = () => {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
+        alignItems: "left",
         justifyContent: "center",
         flexWrap: "wrap",
         gap: "20px",
         marginBottom: "10px",
+        
+        marginTop:"10px"
       }}
     >
       <LegendItem color="#34d399" label="Todays added Leads" />
@@ -88,66 +90,56 @@ const SalespersonLeads = () => {
   };
 
   return (
-    <div className="bg-white border border-gray-300 square-md shadow-md p-4">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-2 border-b pb-2">
-        <h2 className="text-lg font-semibold text-gray-800">
-          Salesperson <span className="font-normal">Leads</span>
-        </h2>
-        <button
-          onClick={handlePrint}
-          className="bg-purple-800 text-white text-sm font-medium px-4 py-2 rounded hover:bg-purple-900 transition"
-        >
-          Print
-        </button>
-      </div>
-
+    <div className="bg-#8c8c8c  square-md p-4">
+      <div className="bg-white border border-gray-300 square-md shadow-md w-[100%] max-w-6xl mx-auto">
+     {/* Header */}
+        <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200 bg-[#f9f9f9]">
+          <h2 className="text-gray-700 text-sm font-semibold">
+            Salesperson <span className="font-bold">Leads</span>
+          </h2>
+          <button
+            onClick={handlePrint}
+            className="bg-purple-800 text-white text-sm px-4 py-1.5 rounded hover:bg-#583A63-900"
+          >
+            Print
+          </button>
+        </div>
       {/* Legend */}
       <CustomLegend />
 
-      {/* Chart */}
-      <div className="w-full h-96 flex flex-col items-center">
-        <ResponsiveContainer width="55%" height="100%">
-          <BarChart data={data} barCategoryGap="20%">
-            {/* Grid lines */}
-            <CartesianGrid stroke="#e5e7eb" strokeWidth={1} vertical={false} />
+     {/* Chart */}
+<div className="w-full h-[500px] flex flex-col items-center justify-center">
+  <ResponsiveContainer width="75%" height="90%">
+    <BarChart data={data} barCategoryGap="20%">
+      <CartesianGrid stroke="#e5e7eb" strokeWidth={1} vertical={false} />
+      <ReferenceLine y={3.5} stroke="#e5e7eb" strokeWidth={1} />
+      <ReferenceLine y={2.5} stroke="#e5e7eb" strokeWidth={1} />
+      <ReferenceLine y={1.5} stroke="#e5e7eb" strokeWidth={1} />
+      <ReferenceLine y={0.5} stroke="#e5e7eb" strokeWidth={1} />
 
-            {/* Separator lines between Y values */}
-            <ReferenceLine y={3.5} stroke="#e5e7eb" strokeWidth={1} />
-            <ReferenceLine y={2.5} stroke="#e5e7eb" strokeWidth={1} />
-            <ReferenceLine y={1.5} stroke="#e5e7eb" strokeWidth={1} />
-            <ReferenceLine y={0.5} stroke="#e5e7eb" strokeWidth={1} />
+      <XAxis
+        dataKey="name"
+        tick={{ fontSize: 12, fill: "#333" }}
+        axisLine={{ stroke: "#0c0c0cff" }}
+        tickLine={false}
+      />
+      <YAxis
+        domain={[0, 4]}
+        tickCount={5}
+        tick={{ fontSize: 12, fill: "#333" }}
+        axisLine={false}
+        tickLine={false}
+      />
 
-            <XAxis
-              dataKey="name"
-              tick={{ fontSize: 12, fill: "#333", fontWeight: "normal" }}
-              axisLine={{ stroke: "#0c0c0cff" }}
-            />
-
-            {/* ✅ Clean Y-axis: no bold, no ticks, no vertical line */}
-            <YAxis
-              domain={[0, 4]}
-              tickCount={5}
-              tick={{ fontSize: 12, fill: "#333", fontWeight: "normal" }}
-              axisLine={false} // hides Y-axis line
-              tickLine={false} // hides small tick marks
-            />
-
-            <Tooltip content={<CustomTooltip />} cursor={false} />
-
-            {/* Bars */}
-            <Bar dataKey="all" stackId="a" fill="#FF8A80" name="All Leads" />
-            <Bar dataKey="miss" stackId="a" fill="#007bff" name="Miss lead" />
-            <Bar
-              dataKey="unscheduled"
-              stackId="a"
-              fill="#94a3b8"
-              name="Unscheduled"
-            />
-            <Bar dataKey="closed" stackId="a" fill="#6ee7b7" name="Closed Leads" />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+      <Tooltip content={<CustomTooltip />} cursor={false} />
+      <Bar dataKey="all" stackId="a" fill="#FF8A80" name="All Leads" />
+      <Bar dataKey="miss" stackId="a" fill="#007bff" name="Miss lead" />
+      <Bar dataKey="unscheduled" stackId="a" fill="#94a3b8" name="Unscheduled" />
+      <Bar dataKey="closed" stackId="a" fill="#6ee7b7" name="Closed Leads" />
+    </BarChart>
+  </ResponsiveContainer>
+</div>
+</div>
     </div>
   );
 };
