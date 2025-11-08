@@ -63,7 +63,7 @@ export default function CommentsBySalesPersonList() {
         {/* Filters Row */}
         <div className="flex flex-wrap items-center justify-between px-8 py-4">
           {/* Left Filters */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-wrap">
             {/* Sales Person Dropdown */}
             <div className="flex items-center gap-2">
               <select
@@ -87,7 +87,7 @@ export default function CommentsBySalesPersonList() {
                 onChange={(date) => setFromDate(date)}
                 dateFormat="dd-MM-yyyy"
                 placeholderText="From Date"
-                className="border border-gray-300 rounded-l-md p-2 pl-3 w-40 text-sm focus:outline-none focus:ring-1 focus:ring-[#00AEEF] text-gray-700 placeholder-gray-400"
+                className="border border-gray-300 rounded-l-md p-2 pl-3 w-72 text-sm focus:outline-none focus:ring-1 focus:ring-[#00AEEF] text-gray-700 placeholder-gray-400"
               />
               <FaCalendarAlt
                 className="absolute right-3 text-[#00AEEF] cursor-pointer"
@@ -103,7 +103,7 @@ export default function CommentsBySalesPersonList() {
                 onChange={(date) => setToDate(date)}
                 dateFormat="dd-MM-yyyy"
                 placeholderText="To Date"
-                className="border border-gray-300 rounded-l-md p-2 pl-3 w-40 text-sm focus:outline-none focus:ring-1 focus:ring-[#00AEEF] text-gray-700 placeholder-gray-400"
+                className="border border-gray-300 rounded-l-md p-2 pl-3 w-72 text-sm focus:outline-none focus:ring-1 focus:ring-[#00AEEF] text-gray-700 placeholder-gray-400"
               />
               <FaCalendarAlt
                 className="absolute right-3 text-[#00AEEF] cursor-pointer"
@@ -113,7 +113,7 @@ export default function CommentsBySalesPersonList() {
           </div>
 
           {/* Search Button on Right */}
-          <div className="flex items-center">
+          <div className="flex items-center mt-3 sm:mt-0">
             <button
               onClick={handleSearch}
               className="bg-[#00AEEF] text-white font-semibold px-8 py-2 rounded text-sm shadow-sm hover:bg-[#0095D9] transition duration-200 ease-in-out"
